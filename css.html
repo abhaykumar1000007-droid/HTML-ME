@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopEasy — Product</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --page-bg: #f3f6f9;
+      --header-bg: #222;
+      --card-bg: #ffffff;
+      --muted: #6b7280;
+      --accent: #0b66d6;
+      --border: #d6d9dd;
+      --card-shadow: 0 2px 6px rgba(16,24,40,0.06);
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--page-bg);
+      color:#111827;
+    }
+
+    /* Outer framed container like the screenshot */
+    .frame{
+      width:95%;
+      max-width:1200px;
+      margin:28px auto;
+      border:3px solid #000;        /* outer black border */
+      background: #fff;
+      padding:16px;
+      box-sizing:border-box;
+    }
+
+    /* header bar */
+    .topbar{
+      background:var(--header-bg);
+      color:#fff;
+      padding:18px 24px;
+      text-align:center;
+      border-radius:3px;
+      box-shadow:0 1px 0 rgba(255,255,255,0.03) inset;
+      margin-bottom:36px;
+    }
+    .topbar h1{
+      margin:0;
+      font-size:28px;
+      font-weight:700;
+      letter-spacing:0.6px;
+    }
+
+    /* page area with light tinted background and centered card */
+    .content-area{
+      background: #f5f7f9;
+      padding:40px 20px;
+      min-height:360px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      box-sizing:border-box;
+    }
+
+    /* product card */
+    .product-card{
+      width:340px;
+      background:var(--card-bg);
+      border-radius:8px;
+      border:1px solid #e6e9ec;
+      box-shadow: var(--card-shadow);
+      overflow:hidden;
+      text-align:left;
+    }
+
+    .product-image{
+      width:100%;
+      height:220px;
+      background:linear-gradient(#efefef,#f6f6f6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-bottom:1px solid var(--border);
+    }
+
+    .product-image img{
+      max-width:85%;
+      max-height:86%;
+      object-fit:contain;
+      display:block;
+      border-radius:2px;
+      box-shadow:0 1px 0 rgba(0,0,0,0.05) inset;
+    }
+
+    .card-body{
+      padding:14px 16px 18px 16px;
+    }
+
+    .title{
+      font-weight:700;
+      font-size:16px;
+      margin:6px 0 6px 0;
+      color:#111827;
+    }
+
+    .desc{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.45;
+      margin:0 0 12px 0;
+    }
+
+    .price-row{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .price-current{
+      color:#0b7a3a; /* green like screenshot */
+      font-weight:700;
+      font-size:16px;
+    }
+
+    .price-old{
+      color:var(--muted);
+      text-decoration:line-through;
+      font-size:14px;
+    }
+
+    .add-btn{
+      display:block;
+      width:100%;
+      padding:10px 14px;
+      border-radius:6px;
+      background:var(--accent);
+      color:#fff;
+      border:0;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 2px 0 rgba(0,0,0,0.08);
+      transition:transform .08s ease, box-shadow .12s ease;
+    }
+    .add-btn:active{ transform: translateY(1px); }
+    .add-btn:focus{ outline:3px solid rgba(11,102,214,0.18); }
+
+    /* small responsive tweaks */
+    @media (max-width:480px){
+      .product-card{ width:90%; }
+      .topbar h1{ font-size:20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="topbar">
+      <h1>ShopEasy</h1>
+    </div>
+
+    <div class="content-area">
+      <div class="product-card" role="region" aria-label="Classic Cotton T-Shirt">
+        <div class="product-image">
+          <!-- replace src with your product image -->
+          <img src="https://via.placeholder.com/520x520/0b9b5b/ffffff?text=T-Shirt" alt="Classic Cotton T-Shirt">
+        </div>
+
+        <div class="card-body">
+          <div class="title">Classic Cotton T-Shirt</div>
+          <p class="desc">Soft, breathable cotton. Regular fit. Available in multiple colors.</p>
+
+          <div class="price-row">
+            <div class="price-current">₹799</div>
+            <div class="price-old">₹1,199</div>
+          </div>
+
+          <button class="add-btn" type="button">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
